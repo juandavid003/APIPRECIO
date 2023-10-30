@@ -15,6 +15,8 @@ namespace APIPRECIO.Models
         [Required]
         public float Precio { get; set; }
 
+        //public List<Compra> Compras { get; set; }
+
 
     }
 }

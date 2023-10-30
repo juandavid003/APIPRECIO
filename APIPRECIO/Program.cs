@@ -21,6 +21,12 @@ builder.Services.AddDbContext<UsuariosDBContext>(option =>
 
 });
 
+builder.Services.AddDbContext<CompraDBContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("ConsStr"));
+
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

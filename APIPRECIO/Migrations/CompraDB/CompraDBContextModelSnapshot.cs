@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace APIPRECIO.Migrations
+namespace APIPRECIO.Migrations.CompraDB
 {
-    [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CompraDBContext))]
+    partial class CompraDBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,9 @@ namespace APIPRECIO.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
+                    b.Property<int>("Codigo")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("FechaCompra")
                         .HasColumnType("datetime2");
 
@@ -45,7 +48,7 @@ namespace APIPRECIO.Migrations
 
                     b.HasKey("IdCompra");
 
-                    b.ToTable("Compras");
+                    b.ToTable("Compra");
                 });
 
             modelBuilder.Entity("APIPRECIO.Models.Producto", b =>
@@ -73,16 +76,6 @@ namespace APIPRECIO.Migrations
                     b.HasKey("IdProducto");
 
                     b.ToTable("Producto");
-
-                    b.HasData(
-                        new
-                        {
-                            IdProducto = 1,
-                            Cantidad = 12,
-                            Descripcion = "Descripcion Producto1",
-                            Nombre = "Producto1",
-                            Precio = 12f
-                        });
                 });
 
             modelBuilder.Entity("APIPRECIO.Models.Usuarios", b =>

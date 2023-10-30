@@ -12,6 +12,7 @@ namespace APIPRECIO.Models
         [Required]
         public string Contrasena { get; set; }
 
+        //public List<Compra> Compras { get; set; }
 
     }
 }

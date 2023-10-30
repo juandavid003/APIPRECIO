@@ -4,16 +4,19 @@ using APIProductos.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace APIPRECIO.Migrations
+namespace APIPRECIO.Migrations.CompraDB
 {
-    [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CompraDBContext))]
+    [Migration("20231029011038_CompraMig")]
+    partial class CompraMig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,6 +36,9 @@ namespace APIPRECIO.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
+                    b.Property<int>("Codigo")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("FechaCompra")
                         .HasColumnType("datetime2");
 
@@ -45,7 +51,7 @@ namespace APIPRECIO.Migrations
 
                     b.HasKey("IdCompra");
 
-                    b.ToTable("Compras");
+                    b.ToTable("Compra");
                 });
 
             modelBuilder.Entity("APIPRECIO.Models.Producto", b =>
@@ -73,16 +79,6 @@ namespace APIPRECIO.Migrations
                     b.HasKey("IdProducto");
 
                     b.ToTable("Producto");
-
-                    b.HasData(
-                        new
-                        {
-                            IdProducto = 1,
-                            Cantidad = 12,
-                            Descripcion = "Descripcion Producto1",
-                            Nombre = "Producto1",
-                            Precio = 12f
-                        });
                 });
 
             modelBuilder.Entity("APIPRECIO.Models.Usuarios", b =>
