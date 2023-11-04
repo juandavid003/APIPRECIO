@@ -19,7 +19,7 @@ namespace APIProductos.Data
         public DbSet<Compra> Compra { get; set; }
         public DbSet<Producto> Producto { get; set; }
 
-        public DbSet<Usuarios> Usuarios { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
