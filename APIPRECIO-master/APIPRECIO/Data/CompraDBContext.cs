@@ -14,7 +14,7 @@ namespace APIProductos.Data
         }
 
         //public DbSet<Producto> Productos { get; set; }
-        //public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
 
         public DbSet<Compra> Compra { get; set; }
         public DbSet<Producto> Producto { get; set; }

@@ -25,15 +25,16 @@ namespace APIPRECIO.Controllers
             //List<Compra> compras = await _db.Compra.Include("Producto").ToListAsync();
             var compras = (from compra in _db.Compra
                            join producto in _db.Producto on compra.IdProducto equals producto.IdProducto
+                           join usuario in _db.Usuarios on compra.Nombre equals usuario.Nombre
                            select new
                            {
                                IdCompra = compra.IdCompra,
                                Codigo = compra.Codigo,
                                Nombre = producto.Nombre,
+                               Comprador = usuario.Nombre,
                                Cantidad = compra.Cantidad,
                                FechaCompra = compra.FechaCompra,
-                               PrecioTotal = compra.Cantidad * producto.Precio,
-                               Comprador = compra.Nombre
+                               PrecioTotal = compra.Cantidad * producto.Precio
                            }).ToList();
             return Ok(compras);
         }

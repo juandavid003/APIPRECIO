@@ -29,25 +29,25 @@ namespace APIProductos.Data
                 }
             );
 
-          //  modelBuilder.Entity<Usuarios>().HasData(
-          //     new Usuarios
-          //     {
-          //         Nombre = "Juan David",
-          //         Correo = "rjuandavid2002@gmailcom",
-          //         Contrasena = "El_gatofly2"
-          //     }
-          //  );
+            modelBuilder.Entity<Usuarios>().HasData(
+               new Usuarios
+               {
+                   Nombre = "Juan David",
+                   Correo = "rjuandavid2002@gmailcom",
+                   Contrasena = "El_gatofly2"
+               }
+            );
 
-          //  modelBuilder.Entity<Compra>().HasData(
-          //    new Compra
-          //    {
-          //        IdCompra = 1,
-          //        IdProducto = 1,
-          //        Nombre = "Juan David",
-          //        Cantidad = 12,
-          //        FechaCompra = DateTime.Now
-          //    }
-          //);
+            modelBuilder.Entity<Compra>().HasData(
+              new Compra
+              {
+                  IdCompra = 1,
+                  IdProducto = 1,
+                  Nombre = "Juan David",
+                  Cantidad = 12,
+                  FechaCompra = DateTime.Now
+              }
+          );
 
         }
 
